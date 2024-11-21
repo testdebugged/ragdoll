@@ -1,0 +1,163 @@
+[gd_scene load_steps=6 format=3 uid="uid://spyukdvovbo2"]
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_ddi74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcdub"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nmtek"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hbje1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6iekb"]
+
+[node name="main" type="Node2D"]
+
+[node name="ragdoll" type="Node2D" parent="."]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="ragdoll"]
+modification_stack = SubResource("SkeletonModificationStack2D_ddi74")
+
+[node name="hipBone2D" type="Bone2D" parent="ragdoll/Skeleton2D"]
+position = Vector2(19, -160)
+scale = Vector2(1, 4)
+rest = Transform2D(1, 0, 0, 4, 19, -160)
+
+[node name="hip" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D"]
+shape = SubResource("RectangleShape2D_lcdub")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/hip"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nmtek")
+
+[node name="left_calfBone2D" type="Bone2D" parent="ragdoll/Skeleton2D/hipBone2D"]
+position = Vector2(-19, 20)
+rest = Transform2D(1, 0, 0, 1, -19, 20)
+
+[node name="left_calf" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D/left_calfBone2D"]
+shape = SubResource("RectangleShape2D_lcdub")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/left_calfBone2D/left_calf"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nmtek")
+
+[node name="left_legBone2D" type="Bone2D" parent="ragdoll/Skeleton2D/hipBone2D/left_calfBone2D"]
+position = Vector2(0, 20)
+rest = Transform2D(1, 0, 0, 1, 0, 20)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="left_leg" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D/left_calfBone2D/left_legBone2D"]
+shape = SubResource("RectangleShape2D_lcdub")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/left_calfBone2D/left_legBone2D/left_leg"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nmtek")
+
+[node name="right_calfBone2D" type="Bone2D" parent="ragdoll/Skeleton2D/hipBone2D"]
+position = Vector2(19, 20)
+rest = Transform2D(1, 0, 0, 1, 19, 20)
+
+[node name="right_calf" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D/right_calfBone2D"]
+shape = SubResource("RectangleShape2D_lcdub")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/right_calfBone2D/right_calf"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nmtek")
+
+[node name="right_legBone2D" type="Bone2D" parent="ragdoll/Skeleton2D/hipBone2D/right_calfBone2D"]
+position = Vector2(0, 20)
+rest = Transform2D(1, 0, 0, 1, 0, 20)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
+
+[node name="right_leg" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D/right_calfBone2D/right_legBone2D"]
+shape = SubResource("RectangleShape2D_lcdub")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/right_calfBone2D/right_legBone2D/right_leg"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nmtek")
+
+[node name="torsoBone2D" type="Bone2D" parent="ragdoll/Skeleton2D/hipBone2D"]
+position = Vector2(0, -20)
+rest = Transform2D(1, 0, 0, 1, 0, -20)
+
+[node name="torso" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D"]
+position = Vector2(0, 3.5)
+scale = Vector2(1, 0.65)
+shape = SubResource("RectangleShape2D_lcdub")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/torso"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nmtek")
+
+[node name="right_shoulderBone2D" type="Bone2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D"]
+position = Vector2(50, 0)
+rotation = 1.5708
+scale = Vector2(0.25, 4)
+rest = Transform2D(-4.07302e-08, 0.25, -4, 3.01992e-07, 50, 0)
+
+[node name="right_shoulder" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/right_shoulderBone2D"]
+shape = SubResource("RectangleShape2D_lcdub")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/right_shoulderBone2D/right_shoulder"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nmtek")
+
+[node name="right_armBone2D" type="Bone2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/right_shoulderBone2D"]
+position = Vector2(0, -20)
+rest = Transform2D(1, 0, 0, 1, 0, -20)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 90.0
+
+[node name="right_arm" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/right_shoulderBone2D/right_armBone2D"]
+shape = SubResource("RectangleShape2D_lcdub")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/right_shoulderBone2D/right_armBone2D/right_arm"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nmtek")
+
+[node name="left_shoulderBone2D" type="Bone2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D"]
+position = Vector2(-50, 0)
+rotation = -1.5708
+scale = Vector2(0.25, 4)
+rest = Transform2D(-4.07302e-08, -0.25, 4, -1.74846e-07, -50, 0)
+
+[node name="left_shoulder" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/left_shoulderBone2D"]
+shape = SubResource("RectangleShape2D_lcdub")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/left_shoulderBone2D/left_shoulder"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nmtek")
+
+[node name="left_armBone2D" type="Bone2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/left_shoulderBone2D"]
+position = Vector2(0, -20)
+rest = Transform2D(1, 0, 0, 1, 0, -20)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = -90.0
+
+[node name="left_arm" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/left_shoulderBone2D/left_armBone2D"]
+shape = SubResource("RectangleShape2D_lcdub")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/left_shoulderBone2D/left_armBone2D/left_arm"]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nmtek")
+
+[node name="headBone2D" type="Bone2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D"]
+position = Vector2(0, -10.75)
+rotation = -1.5708
+scale = Vector2(0.75, 3)
+rest = Transform2D(-1.22191e-07, -0.75, 3, -1.31134e-07, 0, -10.75)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = -90.0
+
+[node name="head" type="CollisionShape2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/headBone2D"]
+shape = SubResource("CircleShape2D_hbje1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ragdoll/Skeleton2D/hipBone2D/torsoBone2D/headBone2D/head"]
+scale = Vector2(20, 20)
+mesh = SubResource("SphereMesh_6iekb")
